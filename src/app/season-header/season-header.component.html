@@ -1,0 +1,28 @@
+<div id="season-header"> 
+  <div>
+    <div id="season-img-group">
+      <h1 *ngIf="selectedSeason">{{selectedSeason.name}}</h1>
+      <img id="season-img" src={{seasonImage}}>
+    </div> 
+    <mat-form-field appearance="fill">
+      <mat-label>Choose a date</mat-label>
+      <input matInput readonly [(ngModel)]="seasonDate" (dateChange)="seasonChange($event)" [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div>
+    <div id="country-img-group">
+      <h1>Country</h1>
+      <img id="country-img" src={{countryImage}}>
+    </div>
+    <mat-form-field appearance="fill">
+      <mat-label>Select a country</mat-label>
+      <mat-select (selectionChange)="countryChange($event)" (value)="selectedCountry" disabled>
+        <mat-option *ngFor="let country of countries" [value]="country.id">
+          {{country.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>

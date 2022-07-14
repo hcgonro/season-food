@@ -1,0 +1,15 @@
+#food-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    border: 1px solid red;
+    background-color: cadetblue;
+    margin: 40px;
+}
+
+.example-card {
+    max-width: 280px;
+    margin-bottom: 10px;
+}
