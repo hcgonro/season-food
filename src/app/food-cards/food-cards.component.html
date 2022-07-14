@@ -1,0 +1,13 @@
+<div id="food-cards">
+    <mat-card *ngFor="let card of foodCardsFiltered" class="example-card">
+        <mat-card-title-group>
+          <mat-card-title>{{card.name}}</mat-card-title>
+          <mat-card-subtitle>{{card.country.name}}</mat-card-subtitle>
+          <mat-card-subtitle>Months: {{card.startMonth+1}} - {{card.endMonth+1}}</mat-card-subtitle>
+          <img mat-card-md-image src={{card.image}}>
+        </mat-card-title-group>
+        <mat-card-content>
+            <p>{{card.description}}</p>
+        </mat-card-content>
+    </mat-card>
+</div>
